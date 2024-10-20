@@ -10,6 +10,30 @@ const Layout = () => {
       </div>
       <Outlet />{" "}
       {/* This will render the specific page content (either input or wheel) */}
+      <footer
+        style={{
+          marginTop: "20px",
+          textAlign: "center",
+          padding: "10px",
+          fontSize: "14px",
+        }}
+      >
+        <p>
+          Powered by{" "}
+          <a
+            href="https://multi-app-web.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: "#007bff",
+              textDecoration: "none",
+              fontWeight: "bold",
+            }}
+          >
+            MultiApp
+          </a>
+        </p>
+      </footer>
     </div>
   );
 };
