@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import PrizeInput from "./PrizeInput";
+import LuckyDrawWheel from "./LuckyDrawWheel";
+import Layout from "./Layout"; // Import the new Layout component
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/* The Layout component wraps both the input and wheel pages */}
+        <Route path="/" element={<Layout />}>
+          {/* First Page: Prize Input Form */}
+          <Route index element={<PrizeInput />} />
+          {/* Second Page: Wheel Page */}
+          <Route path="wheel" element={<LuckyDrawWheel />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
